@@ -22,7 +22,7 @@ https://www.sciencedirect.com/science/article/pii/S1474667016336928
 Mellinger, Daniel, and Vijay Kumar. “Minimum Snap Trajectory Generation and Control for Quadrotors.” 2011 IEEE International Conference on Robotics and Automation, 2011
 https://ieeexplore.ieee.org/abstract/document/5980409
 
-Polynomial Trajectory Planning for Aggressive Quadrotor Flight in Dense Indoor Environments: 
+Richter, Charles, et al. “Polynomial Trajectory Planning for Aggressive Quadrotor Flight in Dense Indoor Environments.” Springer Tracts in Advanced Robotics Robotics Research, 2016, pp. 649–666
 https://link.springer.com/chapter/10.1007/978-3-319-28872-7_37
 
 Lee, Taeyoung, et al. “Geometric Tracking Control of a Quadrotor UAV on SE(3).” 49th IEEE Conference on Decision and Control (CDC), 2010
