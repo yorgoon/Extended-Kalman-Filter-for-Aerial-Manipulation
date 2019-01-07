@@ -11,7 +11,7 @@ For more information, please visit the course [website](https://asco.lcsr.jhu.ed
 ## Final Presentation & Report
 [slides](https://drive.google.com/open?id=1Roen3hFWKzjwpFi7RKR9-zxp94Zd9ZHn), [report](https://drive.google.com/open?id=1kGVsTq9I9r1VLvYIv23_wkJyh48ZD-Qx)
 
-## Related articles
+## Related Articles
 Murray, Richard M., et al. A Mathematical Introduction to Robotic Manipulation. CRC, 1994.
 https://www.cds.caltech.edu/~murray/books/MLS/pdf/mls94-complete.pdf
 
