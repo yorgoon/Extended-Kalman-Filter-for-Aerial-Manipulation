@@ -1,12 +1,13 @@
 # State-Estimation-using-Extended-Kalman-Filter
+Dynamic Modeling and State Estimation for Aerial Manipulation
 This is a final project from the course EN530.603.F2018 Applied Optimal Control, The Johns Hopkins University.
 For more information, please visit the course [website](https://asco.lcsr.jhu.edu/en530-603-f2018-applied-optimal-control/)
 
-## Final presentation
-[slides](https://drive.google.com/open?id=1APnwKnfsYUZB0-4T4GaXExabcxmzodVf)
-
 ## Without EKF
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/HpaOFfIOTrs/0.jpg)](https://www.youtube.com/watch?v=cXVSs3OqWYQ)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/cXVSs3OqWYQ/0.jpg)](https://www.youtube.com/watch?v=cXVSs3OqWYQ)
+
+## Final Presentation & Report
+[slides](https://drive.google.com/open?id=1Roen3hFWKzjwpFi7RKR9-zxp94Zd9ZHn), [report](https://drive.google.com/open?id=1kGVsTq9I9r1VLvYIv23_wkJyh48ZD-Qx)
 
 ## Related articles
 Minimum snap trajectory generation and control for quadrotors: 
