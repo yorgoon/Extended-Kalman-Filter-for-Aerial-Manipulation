@@ -1,7 +1,10 @@
 # Dynamic Modeling and State Estimation for Aerial Manipulation
-This is a final project from the course EN530.603.F2018 Applied Optimal Control, The Johns Hopkins University.
+This is a final project from the course EN530.603.F2018 Applied Optimal Control, The Johns Hopkins University. For more information, please visit the course [website](https://asco.lcsr.jhu.edu/en530-603-f2018-applied-optimal-control/).
 
-For more information, please visit the course [website](https://asco.lcsr.jhu.edu/en530-603-f2018-applied-optimal-control/).
+This repository contains MATLAB code that simulates Extended Kalman Filter (EKF) for a 2-DOF aerial manipulator attached to the UAV. 
+
+## Trajectory planner
+The given scenario consists of two spherical obstacles. The planner will generate an optimized polynomial trajectory (9th order) by minimizing snap term (4th derivative). The class ``MinimumSnapTrajectory`` is called iteratively until the location of the way points and the time intervals for each segment are optimized.
 
 ## Without EKF
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/cXVSs3OqWYQ/0.jpg)](https://www.youtube.com/watch?v=cXVSs3OqWYQ)
