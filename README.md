@@ -3,6 +3,9 @@ This is a final project from the course EN530.603.F2018 Applied Optimal Control,
 
 This repository contains MATLAB code that simulates Extended Kalman Filter (EKF) for a 2-DOF aerial manipulator attached to the UAV. 
 
+## How To
+Please run the main script sequentially in ``mainsim.m``
+
 ## Trajectory planner
 The given scenario consists of two spherical obstacles. The planner will generate an optimized polynomial trajectory (9th order) by minimizing snap term (4th derivative). The class ``MinimumSnapTrajectory`` is called iteratively until the location of the way points and the time intervals for each segment are optimized.
 
