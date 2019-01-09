@@ -1,7 +1,10 @@
 # Dynamic Modeling and State Estimation for Aerial Manipulation
-This is a final project from the course EN530.603.F2018 Applied Optimal Control, The Johns Hopkins University. For more information, please visit the course [website](https://asco.lcsr.jhu.edu/en530-603-f2018-applied-optimal-control/).
+This is a final project from the course EN530.603.F2018 Applied Optimal Control at Johns Hopkins University. For more information, please visit the course [website](https://asco.lcsr.jhu.edu/en530-603-f2018-applied-optimal-control/).
 
 This repository contains MATLAB code that simulates Extended Kalman Filter (EKF) for a 2-DOF aerial manipulator attached to the UAV. 
+
+**Main Contributors**: Soowon Kim, and Neil McCarter
+**Affiliation**: Johns Hopkins University
 
 ## How To
 Please run the main script sequentially in ``mainsim.m``
