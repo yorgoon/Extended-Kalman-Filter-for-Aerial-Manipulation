@@ -201,6 +201,6 @@ direction = [1 0 0]';
 Fmat = extForce_gen(ts, start_T, duration, mag, direction);
 % figure(1)
 % plot3(10.6036, 0.9, -0.4536,'.g','MarkerSize',50);
-filename = 'my_Video2.avi';
+filename = 'myVideo.avi';
 video_gen2(ts(1:end-1), state_true(:,1:end-1)', S, filename, 30, Fmat)
 % close all

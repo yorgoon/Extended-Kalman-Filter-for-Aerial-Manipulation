@@ -60,9 +60,9 @@ yawd_dot = desired_state.yawdot;
 yawd_2dot = desired_state.yawddot;
 
 xcd = [cos(yawd) sin(yawd) 0]';
-ybd = hat_optr(zbd)*xcd/norm(hat_optr(zbd)*xcd);
+ybd = hat_operator(zbd)*xcd/norm(hat_operator(zbd)*xcd);
 % xbd = ybd X zbd
-xbd = hat_optr(ybd)*zbd;
+xbd = hat_operator(ybd)*zbd;
 Rd1 = [xbd ybd zbd];
 Rd2 = [-xbd -ybd zbd];
 
@@ -95,12 +95,12 @@ Fd_norm_dot = Fd'*Fd_dot/norm(Fd);
 zbd_dot = (Fd_dot*norm(Fd) - Fd*Fd_norm_dot)/norm(Fd)^2;
 xcd_dot = [-sin(yawd) cos(yawd) 0]'*desired_state.yawdot;
 
-zbd_x_xcd_dot = hat_optr(zbd_dot)*xcd + hat_optr(zbd)*xcd_dot;
-zbd_xcd_norm_dot = (hat_optr(zbd)*xcd)'*(zbd_x_xcd_dot)/norm(hat_optr(zbd)*xcd);
+zbd_x_xcd_dot = hat_operator(zbd_dot)*xcd + hat_operator(zbd)*xcd_dot;
+zbd_xcd_norm_dot = (hat_operator(zbd)*xcd)'*(zbd_x_xcd_dot)/norm(hat_operator(zbd)*xcd);
 
 
-ybd_dot = (zbd_x_xcd_dot*norm(hat_optr(zbd)*xcd) - hat_optr(zbd)*xcd*zbd_xcd_norm_dot)/norm(hat_optr(zbd)*xcd)^2;
-xbd_dot = hat_optr(ybd_dot)*zbd + hat_optr(ybd)*zbd_dot;
+ybd_dot = (zbd_x_xcd_dot*norm(hat_operator(zbd)*xcd) - hat_operator(zbd)*xcd*zbd_xcd_norm_dot)/norm(hat_operator(zbd)*xcd)^2;
+xbd_dot = hat_operator(ybd_dot)*zbd + hat_operator(ybd)*zbd_dot;
 
 Rd_dot = [xbd_dot ybd_dot zbd_dot];
 wd_hat = Rd'*Rd_dot;
@@ -109,7 +109,7 @@ wd = vee_optr(wd_hat);
 ew = current_omega - R'*Rd*wd;
 
 % Desired angular accerelation^ = Rd_dot'*Rd_dot + Rd'*Rd_2dot;
-R_dot = R*hat_optr(current_omega);
+R_dot = R*hat_operator(current_omega);
 zb_dot = R_dot(:,3);
 u1_dot = Fd_dot'*zb + Fd'*zb_dot;
 current_jerk = (u1_dot*zb + u1*zb_dot)/m;
@@ -122,26 +122,26 @@ zbd_2dot = (Fd_2dot*norm(Fd)-Fd_dot*Fd_norm_dot)/norm(Fd)^2 -...
 % ybd_2dot
 xcd_2dot = [-cos(yawd)*yawd_dot^2-sin(yawd)*yawd_2dot, -sin(yawd)*yawd_dot^2+cos(yawd)*yawd_2dot, 0]';
 
-ybd_2dot_1 = ((hat_optr(zbd_2dot)*xcd + hat_optr(zbd)*xcd_2dot)*norm(hat_optr(zbd)*xcd)-...
-             zbd_x_xcd_dot*zbd_xcd_norm_dot)/norm(hat_optr(zbd)*xcd)^2;
+ybd_2dot_1 = ((hat_operator(zbd_2dot)*xcd + hat_operator(zbd)*xcd_2dot)*norm(hat_operator(zbd)*xcd)-...
+             zbd_x_xcd_dot*zbd_xcd_norm_dot)/norm(hat_operator(zbd)*xcd)^2;
 
-zbd_x_xcd_2dot = hat_optr(zbd_2dot)*xcd + 2*hat_optr(zbd_dot)*xcd_dot + hat_optr(zbd)*xcd_2dot;
-zbd_xcd_norm_2dot = ((zbd_x_xcd_dot'*zbd_x_xcd_dot + (hat_optr(zbd)*xcd)'*zbd_x_xcd_2dot)*norm(hat_optr(zbd)*xcd)-...
-                    ((hat_optr(zbd)*xcd)'*zbd_x_xcd_dot)*zbd_xcd_norm_dot)/norm(hat_optr(zbd)*xcd)^2;
+zbd_x_xcd_2dot = hat_operator(zbd_2dot)*xcd + 2*hat_operator(zbd_dot)*xcd_dot + hat_operator(zbd)*xcd_2dot;
+zbd_xcd_norm_2dot = ((zbd_x_xcd_dot'*zbd_x_xcd_dot + (hat_operator(zbd)*xcd)'*zbd_x_xcd_2dot)*norm(hat_operator(zbd)*xcd)-...
+                    ((hat_operator(zbd)*xcd)'*zbd_x_xcd_dot)*zbd_xcd_norm_dot)/norm(hat_operator(zbd)*xcd)^2;
                 
-ybd_2dot_2 = ((zbd_x_xcd_dot*zbd_xcd_norm_dot + hat_optr(zbd)*xcd*zbd_xcd_norm_2dot)*norm(hat_optr(zbd)*xcd)^2-...
-              2*hat_optr(zbd)*xcd*norm(hat_optr(zbd)*xcd)*zbd_xcd_norm_dot^2)/norm(hat_optr(zbd)*xcd)^4;
+ybd_2dot_2 = ((zbd_x_xcd_dot*zbd_xcd_norm_dot + hat_operator(zbd)*xcd*zbd_xcd_norm_2dot)*norm(hat_operator(zbd)*xcd)^2-...
+              2*hat_operator(zbd)*xcd*norm(hat_operator(zbd)*xcd)*zbd_xcd_norm_dot^2)/norm(hat_operator(zbd)*xcd)^4;
           
 ybd_2dot = ybd_2dot_1 - ybd_2dot_2;
 
-xbd_2dot = hat_optr(ybd_2dot)*zbd + 2*hat_optr(ybd_dot)*zbd_dot + hat_optr(ybd)*zbd_2dot;
+xbd_2dot = hat_operator(ybd_2dot)*zbd + 2*hat_operator(ybd_dot)*zbd_dot + hat_operator(ybd)*zbd_2dot;
 
 Rd_2dot = [xbd_2dot ybd_2dot zbd_2dot];
 wd_dot_hat = Rd_dot'*Rd_dot + Rd'*Rd_2dot;
 wd_dot = vee_optr(wd_dot_hat);
 
 % Moment
-M = -KR.*eR -K_omega.*ew + hat_optr(current_omega)*J*current_omega -J*(hat_optr(current_omega)*R'*Rd*wd - R'*Rd*wd_dot);
+M = -KR.*eR -K_omega.*ew + hat_operator(current_omega)*J*current_omega -J*(hat_operator(current_omega)*R'*Rd*wd - R'*Rd*wd_dot);
 
 u2 = M(1);u3 = M(2); u4 = M(3);
 
