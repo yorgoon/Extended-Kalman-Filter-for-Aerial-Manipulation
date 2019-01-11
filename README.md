@@ -3,7 +3,7 @@ This is a final project from the course EN530.603.F2018 Applied Optimal Control 
 
 This repository contains MATLAB code that simulates Extended Kalman Filter (EKF) for a 2-DOF aerial manipulator attached to the UAV. 
 
-**Main Contributors**: Soowon Kim (skim386@jhu.edu), and Neil McCarter  
+**Main Contributors**: Soowon Kim (skim386@jhu.edu), and Neil McCarter (nmccart7@jhu.edu)  
 **Affiliation**: Johns Hopkins University
 
 ## How To
