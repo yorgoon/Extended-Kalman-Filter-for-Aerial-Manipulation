@@ -9,8 +9,10 @@ This repository contains MATLAB code that simulates Extended Kalman Filter (EKF)
 ## How To
 Please run the main script sequentially in ``mainsim.m``
 
-## Trajectory planner
+## Path Planning
 The given scenario consists of two spherical obstacles. The planner will generate an optimized polynomial trajectory (9th order) by minimizing snap term (4th derivative). The class ``MinimumSnapTrajectory`` is called iteratively until the location of the way points and the time intervals for each segment are optimized.
+
+## Controller
 
 ## Without EKF
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/cXVSs3OqWYQ/0.jpg)](https://www.youtube.com/watch?v=cXVSs3OqWYQ)
